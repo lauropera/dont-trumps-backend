@@ -9,5 +9,6 @@ import br.com.donttrumps.model.CardModel;
 public interface CardRepository extends CrudRepository<CardModel, Integer> {
 
 	List<CardModel> findAll();
-
+	CardModel findCardById(Integer id);
+	
 }

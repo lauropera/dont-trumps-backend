@@ -37,12 +37,8 @@ public class CardModel {
 	@Column(name = "is_trunfo")
 	private boolean isTrunfo;
 
-	public long getId() {
+	public Integer getId() {
 		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public String getName() {
@@ -93,11 +89,11 @@ public class CardModel {
 		this.attr3 = attr3;
 	}
 
-	public boolean isTrunfo() {
+	public boolean getIsTrunfo() {
 		return isTrunfo;
 	}
 
-	public void setTrunfo(boolean isTrunfo) {
+	public void setIsTrunfo(boolean isTrunfo) {
 		this.isTrunfo = isTrunfo;
 	}
 
