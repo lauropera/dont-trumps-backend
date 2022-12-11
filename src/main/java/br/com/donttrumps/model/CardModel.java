@@ -16,20 +16,20 @@ public class CardModel {
 	@Column
 	private Integer id;
 
-	@Column
+	@Column(name = "name")
 	private String name;
 
-	@Column
+	@Column(name = "description")
 	private String description;
 
-	@Column
+	@Column(name = "rarity")
 	private String rarity;
 
 	@Column(name = "strength")
 	private Integer strength;
 
-	@Column(name = "inteligence")
-	private Integer inteligence;
+	@Column(name = "intelligence")
+	private Integer intelligence;
 
 	@Column(name = "defense")
 	private Integer defense;
@@ -37,8 +37,8 @@ public class CardModel {
 	@Column(name = "is_trunfo")
 	private boolean isTrunfo;
 
-	@Column(name = "image_url")
-	private String imageUrl;
+	@Column(name = "image")
+	private String image;
 	
 	public Integer getId() {
 		return id;
@@ -76,12 +76,12 @@ public class CardModel {
 		this.strength = strength;
 	}
 
-	public Integer getInteligence() {
-		return inteligence;
+	public Integer getIntelligence() {
+		return intelligence;
 	}
 
-	public void setInteligence(Integer inteligence) {
-		this.inteligence = inteligence;
+	public void setIntelligence(Integer intelligence) {
+		this.intelligence = intelligence;
 	}
 
 	public Integer getDefense() {
@@ -100,12 +100,12 @@ public class CardModel {
 		this.isTrunfo = isTrunfo;
 	}
 	
-	public String getImageUrl() {
-		return imageUrl;
+	public String getImage() {
+		return image;
 	}
 	
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 }
