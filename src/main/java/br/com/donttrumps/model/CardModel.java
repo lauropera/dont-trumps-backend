@@ -25,18 +25,21 @@ public class CardModel {
 	@Column
 	private String rarity;
 
-	@Column(name = "attr_1")
-	private Integer attr1;
+	@Column(name = "strength")
+	private Integer strength;
 
-	@Column(name = "attr_2")
-	private Integer attr2;
+	@Column(name = "inteligence")
+	private Integer inteligence;
 
-	@Column(name = "attr_3")
-	private Integer attr3;
+	@Column(name = "defense")
+	private Integer defense;
 
 	@Column(name = "is_trunfo")
 	private boolean isTrunfo;
 
+	@Column(name = "image_url")
+	private String imageUrl;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -65,28 +68,28 @@ public class CardModel {
 		this.rarity = rarity;
 	}
 
-	public Integer getAttr1() {
-		return attr1;
+	public Integer getStrength() {
+		return strength;
 	}
 
-	public void setAttr1(Integer attr1) {
-		this.attr1 = attr1;
+	public void setStrength(Integer strength) {
+		this.strength = strength;
 	}
 
-	public Integer getAttr2() {
-		return attr2;
+	public Integer getInteligence() {
+		return inteligence;
 	}
 
-	public void setAttr2(Integer attr2) {
-		this.attr2 = attr2;
+	public void setInteligence(Integer inteligence) {
+		this.inteligence = inteligence;
 	}
 
-	public Integer getAttr3() {
-		return attr3;
+	public Integer getDefense() {
+		return defense;
 	}
 
-	public void setAttr3(Integer attr3) {
-		this.attr3 = attr3;
+	public void setDefense(Integer defense) {
+		this.defense = defense;
 	}
 
 	public boolean getIsTrunfo() {
@@ -95,6 +98,14 @@ public class CardModel {
 
 	public void setIsTrunfo(boolean isTrunfo) {
 		this.isTrunfo = isTrunfo;
+	}
+	
+	public String getImageUrl() {
+		return imageUrl;
+	}
+	
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 
 }

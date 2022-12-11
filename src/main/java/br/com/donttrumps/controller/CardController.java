@@ -47,10 +47,11 @@ public class CardController {
 		card.setName(newCard.getName());
 		card.setDescription(newCard.getDescription());
 		card.setRarity(newCard.getRarity());
-		card.setAttr1(newCard.getAttr1());
-		card.setAttr2(newCard.getAttr2());
-		card.setAttr3(newCard.getAttr3());
+		card.setStrength(newCard.getStrength());
+		card.setInteligence(newCard.getInteligence());
+		card.setDefense(newCard.getDefense());
 		card.setIsTrunfo(newCard.getIsTrunfo());
+		card.setImageUrl(newCard.getImageUrl());
 		
 		CardModel updatedCard = repository.save(card);
 		return ResponseEntity.ok().body(updatedCard);
