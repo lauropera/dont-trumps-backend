@@ -5,40 +5,35 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Cards")
+@Table(name = "cards")
 public class CardModel {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
 	private Integer id;
-
-	@Column(name = "name")
+	@Column
 	private String name;
-
-	@Column(name = "description")
+	@Column
 	private String description;
-
-	@Column(name = "rarity")
-	private String rarity;
-
-	@Column(name = "strength")
+	@Column
 	private Integer strength;
-
-	@Column(name = "intelligence")
+	@Column
 	private Integer intelligence;
-
-	@Column(name = "defense")
+	@Column
 	private Integer defense;
-
 	@Column(name = "is_trunfo")
 	private boolean isTrunfo;
-
-	@Column(name = "image")
+	@Column(nullable = true)
 	private String image;
+	
+	@ManyToOne
+	@JoinColumn(name = "rarity_id", nullable = false)
+	private RarityModel rarity;
 	
 	public Integer getId() {
 		return id;
@@ -58,14 +53,6 @@ public class CardModel {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public String getRarity() {
-		return rarity;
-	}
-
-	public void setRarity(String rarity) {
-		this.rarity = rarity;
 	}
 
 	public Integer getStrength() {
@@ -91,7 +78,15 @@ public class CardModel {
 	public void setDefense(Integer defense) {
 		this.defense = defense;
 	}
-
+	
+	public Integer getRarityId() {
+		return rarity.getId();
+	}
+	
+	public void setRarity(RarityModel rarity) {
+		this.rarity = rarity;
+	}
+	
 	public boolean getIsTrunfo() {
 		return isTrunfo;
 	}

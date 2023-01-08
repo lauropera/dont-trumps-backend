@@ -27,6 +27,17 @@ public class CardController {
 		List<CardModel> cards = (List<CardModel>) repository.findAll();
 		return ResponseEntity.ok().body(cards);
 	}
+	
+	@GetMapping(value = "{id}")
+	public ResponseEntity<CardModel> findById(@PathVariable Integer id) {
+		if(id == null) {
+			ResponseEntity.badRequest().build();
+		}
+
+		CardModel card = repository.findCardById(id);
+		
+		return ResponseEntity.ok().body(card);
+	}
 
 	@PostMapping
 	public ResponseEntity<CardModel> createCard(@RequestBody CardModel card) {
@@ -44,7 +55,6 @@ public class CardController {
 		CardModel card = repository.findCardById(id);
 		card.setName(newCard.getName());
 		card.setDescription(newCard.getDescription());
-		card.setRarity(newCard.getRarity());
 		card.setStrength(newCard.getStrength());
 		card.setIntelligence(newCard.getIntelligence());
 		card.setDefense(newCard.getDefense());
@@ -52,6 +62,7 @@ public class CardController {
 		card.setImage(newCard.getImage());
 		
 		CardModel updatedCard = repository.save(card);
+
 		return ResponseEntity.ok().body(updatedCard);
 	}
 
