@@ -1,7 +1,6 @@
 package br.com.donttrumps.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.donttrumps.model.CardModel;
@@ -48,10 +46,10 @@ public class CardController {
 		card.setDescription(newCard.getDescription());
 		card.setRarity(newCard.getRarity());
 		card.setStrength(newCard.getStrength());
-		card.setInteligence(newCard.getInteligence());
+		card.setIntelligence(newCard.getIntelligence());
 		card.setDefense(newCard.getDefense());
 		card.setIsTrunfo(newCard.getIsTrunfo());
-		card.setImageUrl(newCard.getImageUrl());
+		card.setImage(newCard.getImage());
 		
 		CardModel updatedCard = repository.save(card);
 		return ResponseEntity.ok().body(updatedCard);
