@@ -5,11 +5,11 @@ USE DontTrumps;
 
 CREATE TABLE DontTrumps.rarities(
 id INT AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR(100) NOT NULL
+name VARCHAR(32) NOT NULL
 );
 
-INSERT INTO DontTrumps.rarities(name)
-VALUES ('normal'), ('raro'), ('muito raro');
+INSERT INTO DontTrumps.rarities(`name`)
+VALUES ('normal'), ('rare'), ('very rare');
 
 CREATE TABLE DontTrumps.cards(
 id INT AUTO_INCREMENT PRIMARY KEY,
@@ -23,14 +23,6 @@ is_trunfo VARCHAR(100) NOT NULL,
 image VARCHAR(100),
 FOREIGN KEY (rarity_id) REFERENCES rarities(id)
 );
-
-CREATE TABLE DontTrumps.rarities(
-id INT AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR(32) NOT NULL,
-);
-
-INSERT INTO DontTrumps.rarities(`name`)
-VALUES ('normal'), ('rare'), ('very rare')
 
 INSERT INTO DontTrumps.cards(`name`, `description`, `strength`, `intelligence`, `defense`, `rarity_id`, `is_trunfo`)
 VALUES
